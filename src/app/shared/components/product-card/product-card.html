@@ -1,0 +1,51 @@
+<div class="product-card">
+
+  <!-- Product Image -->
+  <div class="product-image">
+
+    <!-- Favorite -->
+    <button class="favorite-btn" type="button"
+    (click)="onFavoriteClick()">
+        {{ isFavorite() ? '♥' : '♡' }}
+    </button>
+
+    <a [routerLink]="['/products', product().id]">
+      <img
+        [src]="product().thumbnail"
+        [alt]="product().title"
+      />
+    </a>
+
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-info">
+
+    <a [routerLink]="['/products',product().id]"
+    class="product-title-link">
+      <h3 class="product-title">{{ product().title }}</h3>
+    </a>
+
+    <div class="product-rating">
+      <span class="star">★</span>
+      <span>{{ product().rating }}</span>
+    </div>
+
+    <div class="product-bottom">
+
+      <span class="product-price">
+        ${{ product().price }}
+      </span>
+
+      <button
+        class="cart-btn"
+        type="button"
+        (click)="onAddToCart()">
+        Add to Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-box label {
+  font-size: 14px;
+  color: #555;
+}
+
+.sort-box select {
+  height: 42px;
+
+  padding: 0 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  background: white;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  outline: none;
+}

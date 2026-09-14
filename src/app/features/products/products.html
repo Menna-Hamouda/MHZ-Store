@@ -1,0 +1,138 @@
+<div class="products-page">
+
+  <!-- Breadcrumb -->
+
+  <div class="breadcrumb">
+
+    <span>Home</span>
+
+    <span>/</span>
+
+    <span>Products</span>
+
+  </div>
+
+
+  <!-- Header -->
+
+  <section class="products-header">
+
+    <h1>Products</h1>
+
+    <p>
+      Find something you'll love.
+    </p>
+
+  </section>
+
+
+  <!-- Search -->
+
+  <section class="search-section">
+
+    <app-product-search
+      [searchTerm]="searchTerm()"
+      (searchChange)="onSearch($event)"
+    />
+
+  </section>
+
+
+  <!-- Main Layout -->
+
+  <div class="products-layout">
+
+
+    <!-- Filters -->
+
+    <aside class="filters-sidebar">
+
+      <div class="filters-title">
+
+        <h2>Filters</h2>
+
+      </div>
+
+      <app-product-filters
+        [selectedCategory]="selectedCategory()"
+        (filtersChange)="onFiltersChange($event)"
+      />
+
+    </aside>
+
+
+    <!-- Products -->
+
+    <main class="products-content">
+
+
+      <!-- Toolbar -->
+
+      <div class="products-toolbar">
+
+        <span class="products-count">
+
+          {{ filteredProducts().length }}
+
+          Products
+
+        </span>
+
+
+        <app-product-sort
+          (sortChange)="onSortChange($event)"
+        />
+
+      </div>
+
+
+      <!-- Grid -->
+
+      @if (paginatedProducts().length > 0) {
+
+        <app-product-grid
+          [products]="paginatedProducts()"
+          (favoriteClicked)="onFavorite($event)"
+          (cartClicked)="onAddToCart($event)">
+        </app-product-grid>
+
+      }
+
+      @else {
+
+        <div class="no-products">
+
+          <h2>
+            No products found
+          </h2>
+
+          <p>
+            Try changing your search or filters.
+          </p>
+
+        </div>
+
+      }
+
+
+      <!-- Pagination -->
+
+      @if (filteredProducts().length > 0) {
+
+        <app-pagination
+
+          [currentPage]="currentPage()"
+
+          [totalPages]="totalPages()"
+
+          (pageChange)="onPageChange($event)"
+
+        />
+
+      }
+
+    </main>
+
+  </div>
+
+</div>

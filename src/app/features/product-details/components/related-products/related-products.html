@@ -1,0 +1,60 @@
+<section class="related-products">
+
+  <div class="section-header">
+
+    <div>
+      <span class="eyebrow">
+        You May Also Like
+      </span>
+
+      <h2>
+        Related Products
+      </h2>
+    </div>
+
+    <a routerLink="/shop" class="view-all">
+      View All
+    </a>
+
+  </div>
+
+
+  <div class="products-grid">
+
+    <!-- Temporary products -->
+    <article class="product-card">
+
+      <div class="product-image">
+
+        <button class="favorite" type="button">
+          ♡
+        </button>
+
+        <img
+          [src]="product().thumbnail"
+          [alt]="product().title"
+        />
+
+      </div>
+
+      <div class="product-content">
+
+        <span class="category">
+          {{ product().category }}
+        </span>
+
+        <h3>
+          {{ product().title }}
+        </h3>
+
+        <strong>
+          {{ product().price | currency:'USD' }}
+        </strong>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>

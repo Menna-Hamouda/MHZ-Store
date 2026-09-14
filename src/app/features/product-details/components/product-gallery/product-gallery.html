@@ -1,0 +1,63 @@
+<div class="product-gallery">
+
+  <!-- Main Image -->
+  <div class="main-image">
+<!-- 
+    <button
+      class="favorite-btn"
+      type="button"
+      aria-label="Add to favorites">
+      ♡
+    </button> -->
+
+    <!-- <button
+      type="button"
+      (click)="onFavoriteClick()"
+      class="favorite-btn"
+       aria-label="Add to favorites"
+    >
+      ❤️
+    </button> -->
+    <button 
+  type="button" 
+  (click)="onFavoriteClick()" 
+  class="favorite-btn"
+  [class.active]="isFavorite()"
+  [attr.aria-label]="isFavorite() ? 'Remove from favorites' : 'Add to favorites'"
+>
+  {{ isFavorite() ? '♥' : '♡' }}
+</button>
+
+    <img
+      [src]="product().thumbnail"
+      [alt]="product().title"
+    />
+
+  </div>
+
+
+  <!-- Thumbnails -->
+  @if (product().images?.length) {
+
+    <div class="thumbnails">
+
+      @for (image of product().images; track image) {
+
+        <button
+          class="thumbnail"
+          type="button">
+
+          <img
+            [src]="image"
+            [alt]="product().title"
+          />
+
+        </button>
+
+      }
+
+    </div>
+
+  }
+
+</div>

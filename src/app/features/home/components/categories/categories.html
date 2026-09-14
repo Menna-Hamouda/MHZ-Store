@@ -1,0 +1,63 @@
+<section class="categories-section">
+
+  <div class="section-header">
+
+    <span class="section-label">
+      OUR COLLECTIONS
+    </span>
+
+    <h2>
+      Shop by Category
+    </h2>
+
+    <p>
+      Explore our collections and find your perfect style.
+    </p>
+
+  </div>
+
+
+  <div class="categories-grid">
+
+    @for (category of categories; track category.id) {
+
+      <a
+        class="category-card"
+        [routerLink]="['/shop']"
+        [queryParams]="{ category: category.slug }"
+      >
+
+        <div class="category-image">
+
+          <img
+            [src]="category.image"
+            [alt]="category.name"
+          />
+
+        </div>
+
+
+        <div class="category-overlay">
+
+          <div class="category-info">
+
+            <h3>
+              {{ category.name }}
+            </h3>
+
+            <span class="explore">
+              Explore
+              <span class="arrow">→</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    }
+
+  </div>
+
+</section>

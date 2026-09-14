@@ -1,0 +1,46 @@
+<section class="featured-section">
+
+  <div class="section-header">
+
+    <span class="section-label">
+      OUR PICKS
+    </span>
+
+    <h2>
+      Featured Products
+    </h2>
+
+    <p>
+      Discover some of our favorite products,
+      selected just for you.
+    </p>
+
+  </div>
+
+
+  <div class="products-grid">
+
+    @for (product of featuredProducts(); track product.id) {
+
+      <app-product-card
+        [product]="product"
+        [isFavorite]="isFavorite(product.id)"
+        (favoriteClicked)="onFavorite($event)"
+        (cartClicked)="onAddToCart($event)">
+      </app-product-card>
+
+    }
+
+  </div>
+
+
+  <div class="view-all">
+
+    <a routerLink="/shop">
+      View All
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>

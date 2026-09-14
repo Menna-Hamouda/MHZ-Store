@@ -1,0 +1,210 @@
+<section class="auth-page">
+
+  <div class="auth-card">
+
+    <div class="auth-header">
+
+      <span class="auth-brand">
+        MHZ STORE
+      </span>
+
+      <h1>Create Account</h1>
+
+      <p>
+        Create your account and start shopping.
+      </p>
+
+    </div>
+
+
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="auth-form"
+    >
+
+      <!-- Name -->
+
+      <div class="form-group">
+
+        <label for="name">
+          Full Name
+        </label>
+
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Enter your full name"
+        />
+
+        @if (
+          name.touched &&
+          name.hasError('required')
+        ) {
+          <small class="error">
+            Name is required.
+          </small>
+        }
+
+        @if (
+          name.touched &&
+          name.hasError('minlength')
+        ) {
+          <small class="error">
+            Name must be at least 3 characters.
+          </small>
+        }
+
+      </div>
+
+
+      <!-- Email -->
+
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+
+        @if (
+          email.touched &&
+          email.hasError('required')
+        ) {
+          <small class="error">
+            Email is required.
+          </small>
+        }
+
+        @if (
+          email.touched &&
+          email.hasError('email')
+        ) {
+          <small class="error">
+            Please enter a valid email.
+          </small>
+        }
+
+      </div>
+
+
+      <!-- Password -->
+
+      <div class="form-group">
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="At least 6 characters"
+        />
+
+        @if (
+          password.touched &&
+          password.hasError('required')
+        ) {
+          <small class="error">
+            Password is required.
+          </small>
+        }
+
+        @if (
+          password.touched &&
+          password.hasError('minlength')
+        ) {
+          <small class="error">
+            Password must be at least 6 characters.
+          </small>
+        }
+
+      </div>
+
+
+      <!-- Confirm Password -->
+
+      <div class="form-group">
+
+        <label for="confirmPassword">
+          Confirm Password
+        </label>
+
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+          placeholder="Repeat your password"
+        />
+
+        @if (
+          confirmPassword.touched &&
+          confirmPassword.hasError('required')
+        ) {
+          <small class="error">
+            Please confirm your password.
+          </small>
+        }
+
+        @if (
+          confirmPassword.touched &&
+          registerForm.hasError('passwordMismatch')
+        ) {
+          <small class="error">
+            Passwords do not match.
+          </small>
+        }
+
+      </div>
+
+
+      @if (registerError) {
+
+        <div class="login-error">
+          {{ registerError }}
+        </div>
+
+      }
+
+
+      <button
+        type="submit"
+        class="auth-btn"
+        [disabled]="isLoading"
+      >
+
+        @if (isLoading) {
+          Creating account...
+        } @else {
+          Create Account
+        }
+
+      </button>
+
+    </form>
+
+
+    <div class="auth-footer">
+
+      <span>
+        Already have an account?
+      </span>
+
+      <a routerLink="/login">
+        Login
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

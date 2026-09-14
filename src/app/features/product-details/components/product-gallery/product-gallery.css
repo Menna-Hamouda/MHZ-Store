@@ -1,0 +1,174 @@
+.product-gallery {
+  width: 100%;
+}
+
+
+/* =========================
+   Main Image
+========================= */
+
+.main-image {
+  position: relative;
+
+  width: 100%;
+  height: 560px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #f7f7f5;
+}
+
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================
+   Favorite
+========================= */
+
+.favorite-btn {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  z-index: 2;
+
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+
+.favorite-btn:hover {
+  transform: scale(1.08);
+
+  color: rgb(86, 48, 11);
+  /* background-color: rgb(86, 48, 11); */
+}
+
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #777;
+  transition: 0.2s ease;
+  /* background-color: rgb(86, 48, 11); */
+}
+
+.favorite-btn.active {
+  /* background-color: rgb(86, 48, 11); */
+  color: #e63946;
+}
+
+
+/* =========================
+   Thumbnails
+========================= */
+
+.thumbnails {
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 16px;
+
+  overflow-x: auto;
+
+  padding-bottom: 5px;
+}
+
+
+.thumbnail {
+  flex: 0 0 85px;
+
+  width: 85px;
+  height: 90px;
+
+  padding: 5px;
+
+  border: 1px solid #dedede;
+
+  border-radius: 12px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+.thumbnail:hover {
+  border-color: #1b9b58;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1000px) {
+
+  .main-image {
+    height: 500px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .main-image {
+    height: 380px;
+
+    border-radius: 14px;
+  }
+
+  .thumbnail {
+    flex-basis: 70px;
+
+    width: 70px;
+    height: 75px;
+  }
+
+}

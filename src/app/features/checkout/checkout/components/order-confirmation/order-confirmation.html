@@ -1,0 +1,76 @@
+<div class="confirmation-card">
+
+  <div class="success-icon">
+    ✓
+  </div>
+
+
+  <h1>
+    Order Confirmed!
+  </h1>
+
+
+  <p>
+    Thank you for shopping with MHZ STORE.
+  </p>
+
+
+  <div class="order-number">
+
+    <span>Order Number</span>
+
+    <strong>
+      {{ order().id }}
+    </strong>
+
+  </div>
+
+
+  <div class="confirmation-summary">
+
+    <div>
+      <span>Subtotal</span>
+
+      <strong>
+        ${{ order().subtotal.toFixed(2) }}
+      </strong>
+    </div>
+
+
+    <div>
+      <span>Shipping</span>
+
+      <strong>
+
+        @if (order().shippingCost === 0) {
+          Free
+        } @else {
+          ${{ order().shippingCost.toFixed(2) }}
+        }
+
+      </strong>
+
+    </div>
+
+
+    <div class="total">
+
+      <span>Total</span>
+
+      <strong>
+        ${{ order().total.toFixed(2) }}
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <a
+    routerLink="/shop"
+    class="primary-btn"
+  >
+    Continue Shopping
+  </a>
+
+</div>

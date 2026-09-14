@@ -1,0 +1,425 @@
+<nav class="navbar">
+
+  <div class="navbar-container">
+
+    <!-- =====================================================
+         LOGO
+    ====================================================== -->
+
+    <a routerLink="/home" class="logo">
+
+      <span class="logo-mhz">
+        <span class="logo-line"></span>
+        MHZ
+        <span class="logo-line"></span>
+      </span>
+
+      <span class="logo-store">
+        STORE
+      </span>
+
+    </a>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <div class="nav-links">
+
+      <!-- Home -->
+
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+
+
+      <!-- Shop -->
+
+      <a
+        routerLink="/shop"
+        routerLinkActive="active"
+      >
+        Shop
+      </a>
+
+
+      <!-- =================================================
+           CATEGORIES
+      ================================================== -->
+
+      <div class="categories">
+
+        <button
+          type="button"
+          class="category-btn"
+        >
+
+          <!-- Category Icon -->
+
+          <svg
+            class="category-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect
+              x="4"
+              y="4"
+              width="6"
+              height="6"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+
+            <rect
+              x="14"
+              y="4"
+              width="6"
+              height="6"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+
+            <rect
+              x="4"
+              y="14"
+              width="6"
+              height="6"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+
+            <rect
+              x="14"
+              y="14"
+              width="6"
+              height="6"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+          </svg>
+
+          <span>Categories</span>
+
+          <!-- Small Arrow -->
+
+          <svg
+            class="category-arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M7 10L12 15L17 10"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+        </button>
+
+
+        <!-- Dropdown -->
+
+        <div class="dropdown">
+
+          <div class="dropdown-title">
+            Shop by category
+          </div>
+
+
+          <a
+            routerLink="/shop"
+            [queryParams]="{ category: 'women' }"
+          >
+            <span>Women</span>
+            <span class="dropdown-arrow">→</span>
+          </a>
+
+
+          <a
+            routerLink="/shop"
+            [queryParams]="{ category: 'men' }"
+          >
+            <span>Men</span>
+            <span class="dropdown-arrow">→</span>
+          </a>
+
+
+          <a
+            routerLink="/shop"
+            [queryParams]="{ category: 'bags' }"
+          >
+            <span>Bags</span>
+            <span class="dropdown-arrow">→</span>
+          </a>
+
+
+          <a
+            routerLink="/shop"
+            [queryParams]="{ category: 'shoes' }"
+          >
+            <span>Shoes</span>
+            <span class="dropdown-arrow">→</span>
+          </a>
+
+
+          <a
+            routerLink="/shop"
+            [queryParams]="{ category: 'accessories' }"
+          >
+            <span>Accessories</span>
+            <span class="dropdown-arrow">→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SEARCH
+    ====================================================== -->
+
+    <div class="search-box">
+
+      <!-- Search Icon -->
+
+      <svg
+        class="search-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="6.5"
+          stroke="currentColor"
+          stroke-width="1.8"
+        />
+
+        <path
+          d="M16 16L20 20"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+      </svg>
+
+
+      <input
+        type="text"
+        placeholder="Search products..."
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="onSearch()"
+      />
+
+
+      <button
+        type="button"
+        class="search-btn"
+        aria-label="Search"
+        (click)="onSearch()"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="6"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+
+          <path
+            d="M15.5 15.5L20 20"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+      </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         ACTIONS
+    ====================================================== -->
+
+    <div class="nav-actions">
+
+
+      <!-- Favorites -->
+
+      <a
+        routerLink="/favorites"
+        class="action"
+        aria-label="Favorites"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M20.8 8.6C20.8 13.4 12 19 12 19S3.2 13.4 3.2 8.6C3.2 5.8 5.2 4 7.8 4C9.5 4 11 4.9 12 6.2C13 4.9 14.5 4 16.2 4C18.8 4 20.8 5.8 20.8 8.6Z"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+      </a>
+
+
+      <!-- Cart -->
+
+      <a
+        routerLink="/cart"
+        class="action"
+        aria-label="Shopping cart"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 5H6L8.2 15.2C8.4 16.1 9.2 16.7 10.1 16.7H17.2C18.1 16.7 18.9 16.1 19.1 15.2L20.5 9H7"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <circle
+            cx="10"
+            cy="20"
+            r="1"
+            fill="currentColor"
+          />
+
+          <circle
+            cx="17"
+            cy="20"
+            r="1"
+            fill="currentColor"
+          />
+
+        </svg>
+
+      </a>
+
+
+     
+
+    <div class="account">
+
+      @if (currentUser()) {
+
+        <!-- =========================
+            LOGGED IN
+        ========================== -->
+
+        <button
+          type="button"
+          class="account-btn"
+          (click)="onLogout()"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+
+            <circle
+              cx="12"
+              cy="8"
+              r="3.2"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+
+            <path
+              d="M5.5 20C6.3 16.7 8.5 15 12 15C15.5 15 17.7 16.7 18.5 20"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+          <span>Logout</span>
+
+        </button>
+
+      } @else {
+
+        <!-- =========================
+            LOGGED OUT
+        ========================== -->
+
+        <a
+          routerLink="/login"
+          class="account-btn"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+
+            <circle
+              cx="12"
+              cy="8"
+              r="3.2"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+
+            <path
+              d="M5.5 20C6.3 16.7 8.5 15 12 15C15.5 15 17.7 16.7 18.5 20"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+          <span>Login</span>
+
+        </a>
+
+      }
+
+    </div>
+
+    </div>
+
+  </div>
+
+</nav>

@@ -1,0 +1,62 @@
+<div class="product-page">
+
+  @if (productById(); as product) {
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a routerLink="/">Home</a>
+      <span>/</span>
+
+      <a routerLink="/shop">Shop</a>
+      <span>/</span>
+
+      <span>{{ product.title }}</span>
+    </div>
+
+
+    <!-- Main Product Section -->
+    <div class="product-main">
+
+      <!-- Left Side -->
+      <div class="product-left">
+
+        <app-product-gallery
+          [product]="product"
+          (favoriteClicked)="onFavorite($event)">
+        </app-product-gallery>
+
+      </div>
+
+
+      <!-- Right Side -->
+      <div class="product-right">
+
+        <app-product-info
+          [product]="product">
+        </app-product-info>
+
+        <app-product-options
+          [product]="product"
+          
+           (cartClicked)="onAddToCart($event)">
+        </app-product-options>
+
+      </div>
+
+    </div>
+
+
+    <!-- Reviews -->
+    <app-product-reviews
+      [product]="product">
+    </app-product-reviews>
+
+
+    <!-- Related Products -->
+    <app-related-products
+      [product]="product">
+    </app-related-products>
+
+  }
+
+</div>

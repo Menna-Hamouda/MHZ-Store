@@ -1,0 +1,177 @@
+/* =========================
+   Favorites Page
+========================= */
+
+.favorites-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 55px 30px 80px;
+}
+
+/* =========================
+   Section Header
+========================= */
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  color: #c9a45c;
+}
+
+.section-header h1 {
+  margin: 0 0 10px;
+
+  font-size: 38px;
+  font-weight: 700;
+
+  color: #1a1a1a;
+}
+
+.section-header p {
+  margin: 0;
+
+  font-size: 16px;
+  color: #777;
+}
+
+/* =========================
+   Favorites Grid
+========================= */
+
+.favorites-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+/*
+  The ProductCard already has
+  its own styling.
+*/
+.favorite-item {
+  min-width: 0;
+}
+
+/* =========================
+   Empty Favorites
+========================= */
+
+.empty-favorites {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #f8f7f4;
+
+  border: 1px solid #eeeeee;
+  border-radius: 18px;
+
+  padding: 50px 20px;
+}
+
+.empty-favorites h2 {
+  margin: 0 0 10px;
+
+  font-size: 26px;
+  color: #1a1a1a;
+}
+
+.empty-favorites p {
+  margin: 0 0 25px;
+
+  color: #777;
+  font-size: 16px;
+}
+
+.empty-favorites a {
+  display: inline-block;
+
+  padding: 12px 24px;
+
+  background: #1a1a1a;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.empty-favorites a:hover {
+  background: #c9a45c;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1000px) {
+
+  .favorites-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  .favorites-section {
+    padding: 40px 20px 60px;
+  }
+
+  .section-header h1 {
+    font-size: 32px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .favorites-section {
+    padding: 30px 15px 50px;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .section-header h1 {
+    font-size: 28px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

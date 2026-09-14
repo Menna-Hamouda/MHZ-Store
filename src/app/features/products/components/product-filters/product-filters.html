@@ -1,0 +1,134 @@
+<div class="filters">
+
+  <!-- Category -->
+
+  <div class="filter-section">
+
+    <h3>Category</h3>
+
+    <label>
+      <input
+        type="radio"
+        name="category"
+        [checked]="selectedCategory  === 'all'"
+        (change)="onCategoryChange('all')"
+      />
+      <span>All</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="category"
+        [checked]="selectedCategory === 'women'"
+        (change)="onCategoryChange('women')"
+      />
+      <span>Women</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="category"
+        [checked]="selectedCategory === 'men'"
+        (change)="onCategoryChange('men')"
+      />
+      <span>Men</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="category"
+        [checked]="selectedCategory === 'shoes'"
+        (change)="onCategoryChange('shoes')"
+      />
+      <span>Shoes</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="category"
+        [checked]="selectedCategory === 'bags'"
+        (change)="onCategoryChange('bags')"
+      />
+      <span>Bags</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="category"
+        [checked]="selectedCategory === 'accessories'"
+        (change)="onCategoryChange('accessories')"
+      />
+      <span>Accessories</span>
+    </label>
+
+  </div>
+
+
+  <!-- Price -->
+
+  <div class="filter-section">
+
+    <h3>Price</h3>
+
+    <div class="price-values">
+      <span>$0</span>
+      <span>${{ maxPrice }}</span>
+    </div>
+
+    <input
+      class="price-range"
+      type="range"
+      min="0"
+      max="200"
+      step="1"
+      [value]="maxPrice"
+      (input)="onPriceChange($event)"
+    />
+
+  </div>
+
+
+  <!-- Rating -->
+
+  <div class="filter-section">
+
+    <h3>Rating</h3>
+
+    <label>
+      <input
+        type="radio"
+        name="rating"
+        [checked]="rating === 4"
+        (change)="onRatingChange(4)"
+      />
+      <span>4★ & up</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="rating"
+        [checked]="rating === 3"
+        (change)="onRatingChange(3)"
+      />
+      <span>3★ & up</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="rating"
+        [checked]="rating === 0"
+        (change)="onRatingChange(0)"
+      />
+      <span>All ratings</span>
+    </label>
+
+  </div>
+
+</div>

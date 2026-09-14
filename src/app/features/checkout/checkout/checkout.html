@@ -1,0 +1,182 @@
+<section class="checkout-page">
+
+  <div class="checkout-container">
+
+    <div class="checkout-header">
+
+      <h1>Checkout</h1>
+
+      <p>
+        Complete your order in a few simple steps.
+      </p>
+
+    </div>
+
+
+    <app-checkout-progress
+      [currentStep]="currentStep()"
+    />
+
+
+    @if (
+      currentStep() === 1
+    ) {
+
+      @if (
+        checkoutService.cart().length > 0
+      ) {
+
+        <div class="checkout-layout">
+
+          <div class="checkout-main">
+
+            <div class="checkout-card">
+
+              <h2>
+                Shipping Information
+              </h2>
+
+              <p class="section-description">
+                Enter your delivery information.
+              </p>
+
+
+              <app-shipping-form
+                (shippingSubmit)="onShippingSubmit($event)"
+              />
+
+            </div>
+
+          </div>
+
+
+          <aside class="order-summary">
+
+            <h2>Order Summary</h2>
+
+
+            <div class="summary-row">
+
+              <span>Subtotal</span>
+
+              <strong>
+                ${{
+                  checkoutService
+                    .subtotal()
+                    .toFixed(2)
+                }}
+              </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+              <span>Shipping</span>
+
+              <strong>
+
+                @if (
+                  checkoutService.shippingCost() === 0
+                ) {
+                  Free
+                } @else {
+                  ${{
+                    checkoutService
+                      .shippingCost()
+                      .toFixed(2)
+                  }}
+                }
+
+              </strong>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <div class="summary-total">
+
+              <span>Total</span>
+
+              <strong>
+                ${{
+                  checkoutService
+                    .total()
+                    .toFixed(2)
+                }}
+              </strong>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      } @else {
+
+        <div class="empty-checkout">
+
+          <h2>
+            Your cart is empty
+          </h2>
+
+          <p>
+            Add products before going to checkout.
+          </p>
+
+          <a
+            routerLink="/shop"
+            class="primary-btn"
+          >
+            Continue Shopping
+          </a>
+
+        </div>
+
+      }
+
+    }
+
+
+    @if (
+      currentStep() === 2 &&
+      shipping()
+    ) {
+
+      <app-order-review
+
+        [items]="checkoutService.cart()"
+
+        [shipping]="shipping()!"
+
+        [subtotal]="checkoutService.subtotal()"
+
+        [shippingCost]="checkoutService.shippingCost()"
+
+        [total]="checkoutService.total()"
+
+        (back)="onBackToShipping()"
+
+        (placeOrder)="onPlaceOrder()"
+
+      />
+
+    }
+
+
+    @if (
+      currentStep() === 3 &&
+      checkoutService.order()
+    ) {
+
+      <app-order-confirmation
+        [order]="checkoutService.order()!"
+      />
+
+    }
+
+  </div>
+
+</section>

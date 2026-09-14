@@ -1,0 +1,73 @@
+<section class="cart-page">
+
+  <h1>Shopping Cart</h1>
+
+@if (cart().length > 0) {
+
+  <div class="cart-items">
+
+    @for (item of cart(); track item.product.id) {
+
+      <div class="cart-item">
+
+        <img
+          [src]="item.product.thumbnail"
+          [alt]="item.product.title"
+        />
+
+        <div class="cart-info">
+
+          <h3>{{ item.product.title }}</h3>
+
+          <p>${{ item.product.price * item.quantity }}</p>
+
+          <div class="quantity">
+
+            <button
+              type="button"
+              (click)="decreaseQuantity(item.product.id)"
+            >
+              -
+            </button>
+
+            <span>{{ item.quantity }}</span>
+
+            <button
+              type="button"
+              (click)="increaseQuantity(item.product.id)"
+            >
+              +
+            </button>
+
+          </div>
+
+          <button
+            type="button"
+            (click)="removeFromCart(item.product.id)"
+          >
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+  <!-- Checkout Button 👇 -->
+  <a
+    routerLink="/checkout"
+    class="checkout-btn"
+  >
+    Proceed to Checkout
+  </a>
+
+} @else {
+
+  <p>Your cart is empty.</p>
+
+}
+
+</section>

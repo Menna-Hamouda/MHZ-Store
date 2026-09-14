@@ -1,0 +1,186 @@
+.hero {
+  width: 100%;
+  min-height: 560px;
+
+  background-image: url('/images/hero/HeroImg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 60px 24px;
+
+  box-sizing: border-box;
+}
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: #b8955a;
+}
+.hero h1 {
+  margin: 0;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: clamp(48px, 5vw, 76px);
+
+  line-height: 0.95;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+.hero h1 span {
+  color: #c59b5c;
+}
+.hero-description {
+  max-width: 480px;
+
+  margin: 28px 0 0;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+.hero-content {
+  padding-right: 50%;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 32px;
+
+  min-width: 220px;
+  height: 54px;
+
+  padding: 0 28px;
+
+  background-color: #1b1b1b;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  border: 1px solid #1b1b1b;
+  border-radius: 2px;
+
+  transition: all 0.3s ease;
+}
+.hero-btn:hover {
+  background-color: #c59b5c;
+  border-color: #c59b5c;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+.hero-btn::after {
+  content: '→';
+
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: transform 0.3s ease;
+}
+
+.hero-btn:hover::after {
+  transform: translateX(6px);
+}
+@media (max-width: 600px) {
+  .hero-btn {
+    min-width: 190px;
+    height: 50px;
+
+    padding: 0 22px;
+
+    margin-top: 26px;
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+}
+@media (min-width: 992px) {
+  .hero-content {
+    padding-right: 50%;
+  }
+}
+@media (max-width: 991px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero-content {
+    padding: 50px 40px;
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    font-size: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    min-height: 620px;
+
+    background-position: 65% center;
+  }
+
+  .hero-content {
+    padding: 50px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    max-width: 330px;
+
+    margin-top: 22px;
+
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,1011 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 80px;
+
+  background: rgba(17, 20, 22, 0.96);
+
+  border-bottom: 1px solid rgba(197, 155, 92, 0.14);
+
+  box-shadow:
+    0 4px 10px rgba(255, 201, 119, 0.8);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.navbar-container {
+  width: 100%;
+  max-width: 1320px;
+  height: 100%;
+
+  margin: 0 auto;
+
+  padding: 0 34px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+  width: 125px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  line-height: 1;
+
+  flex-shrink: 0;
+}
+
+
+/* MHZ */
+
+.logo-mhz {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #c59b5c;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  margin-left: 5px;
+
+  transition: letter-spacing 0.3s ease;
+}
+
+
+/* Small lines beside MHZ */
+
+.logo-line {
+  width: 19px;
+  height: 1px;
+
+  background: #c59b5c;
+
+  opacity: 0.8;
+}
+
+
+/* STORE */
+
+.logo-store {
+  margin-top: 7px;
+
+  color: #ffffff;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 29px;
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  line-height: 0.9;
+
+  transition:
+    color 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+
+/* Logo Hover */
+
+.logo:hover .logo-store {
+  color: #f3e4cd;
+  letter-spacing: 5px;
+}
+
+.logo:hover .logo-mhz {
+  letter-spacing: 6px;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  /*
+    هنا المسافة الكبيرة اللي طلبتيها
+    بين الـ Logo والـ Navigation
+  */
+
+  margin-left: 65px;
+
+  gap: 38px;
+
+  height: 100%;
+}
+
+
+/* Normal Links */
+
+.nav-links > a,
+.category-btn {
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  color: #aeb4b8;
+
+  background: transparent;
+
+  border: none;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* Underline */
+
+.nav-links > a::after,
+.category-btn::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 16px;
+
+  width: 0;
+  height: 2px;
+
+  background: #c59b5c;
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+
+/* Hover / Active */
+
+.nav-links > a:hover,
+.nav-links > a.active,
+.category-btn:hover {
+  color: #ffffff;
+}
+
+
+.nav-links > a:hover::after,
+.nav-links > a.active::after,
+.category-btn:hover::after {
+  width: 22px;
+}
+
+
+/* =========================================================
+   CATEGORIES BUTTON
+========================================================= */
+
+.categories {
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.category-btn {
+  gap: 9px;
+}
+
+
+/* Four squares icon */
+
+.category-icon {
+  width: 19px;
+  height: 19px;
+
+  color: #c59b5c;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.categories:hover .category-icon {
+  color: #e0b873;
+
+  transform: rotate(6deg);
+}
+
+
+/* Arrow */
+
+.category-arrow {
+  width: 14px;
+  height: 14px;
+
+  margin-left: 1px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.categories:hover .category-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   CATEGORY DROPDOWN
+========================================================= */
+
+.dropdown {
+  position: absolute;
+
+  top: calc(100% + 1px);
+  left: -20px;
+
+  width: 220px;
+
+  padding: 12px;
+
+  background: #1a1e21;
+
+  border: 1px solid rgba(197, 155, 92, 0.18);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-8px);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+}
+
+
+.categories:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+
+/* Dropdown small top line */
+
+.dropdown::before {
+  content: "";
+
+  position: absolute;
+
+  top: -5px;
+  left: 31px;
+
+  width: 9px;
+  height: 9px;
+
+  background: #1a1e21;
+
+  border-left: 1px solid rgba(197, 155, 92, 0.18);
+  border-top: 1px solid rgba(197, 155, 92, 0.18);
+
+  transform: rotate(45deg);
+}
+
+
+/* Dropdown title */
+
+.dropdown-title {
+  padding: 7px 10px 10px;
+
+  color: #c59b5c;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* Dropdown links */
+
+.dropdown a {
+  position: relative;
+
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 11px 10px;
+
+  color: #bfc4c7;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  border-radius: 8px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+
+.dropdown a::after {
+  display: none;
+}
+
+
+.dropdown a:hover {
+  color: #ffffff;
+
+  background: rgba(197, 155, 92, 0.08);
+
+  padding-left: 15px;
+}
+
+
+.dropdown-arrow {
+  color: #c59b5c;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.dropdown a:hover .dropdown-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+  position: relative;
+
+  margin-left: auto;
+
+  width: 290px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  background: #f7f7f7;
+
+  border: 1px solid transparent;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  transition:
+    width 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Search focus */
+
+.search-box:focus-within {
+  width: 310px;
+
+  border-color: rgba(197, 155, 92, 0.6);
+
+  box-shadow:
+    0 0 0 4px rgba(197, 155, 92, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Left icon */
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+
+  margin-left: 16px;
+
+  color: #737a7e;
+
+  flex-shrink: 0;
+}
+
+
+.search-box input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  padding: 0 12px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #202427;
+
+  font-size: 13px;
+}
+
+
+.search-box input::placeholder {
+  color: #8d9498;
+}
+
+
+/* Search button */
+
+.search-btn {
+  width: 43px;
+  height: 43px;
+
+  margin-right: -1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: #c59b5c;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.search-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+.search-btn:hover {
+  background: #b4874b;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-left: 18px;
+}
+
+
+/* =========================================================
+   FAVORITES + CART
+========================================================= */
+
+.action {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #d1d4d6;
+
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.action svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+.action:hover {
+  color: #c59b5c;
+
+  background: rgba(197, 155, 92, 0.08);
+
+  border-color: rgba(197, 155, 92, 0.3);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ACCOUNT / LOGIN
+========================================================= */
+
+.account {
+  margin-left: 5px;
+
+  padding-left: 14px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.account-btn {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 12px;
+
+  color: #d1d4d6;
+
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.account-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+.account-btn:hover {
+  color: #c59b5c;
+
+  background: rgba(197, 155, 92, 0.06);
+
+  border-color: rgba(197, 155, 92, 0.3);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+  .navbar-container {
+    padding: 0 22px;
+  }
+
+
+  .nav-links {
+    margin-left: 35px;
+
+    gap: 25px;
+  }
+
+
+  .search-box {
+    width: 220px;
+  }
+
+
+  .search-box:focus-within {
+    width: 240px;
+  }
+
+
+  .account-btn span {
+    display: none;
+  }
+
+
+  .account-btn {
+    width: 40px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET SMALL
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 76px;
+  }
+
+
+  .logo {
+    width: 105px;
+  }
+
+
+  .logo-store {
+    font-size: 24px;
+  }
+
+
+  .logo-mhz {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+  }
+
+
+  .logo-line {
+    width: 14px;
+  }
+
+
+  .nav-links {
+    margin-left: 25px;
+
+    gap: 18px;
+  }
+
+
+  .nav-links > a,
+  .category-btn {
+    font-size: 13px;
+  }
+
+
+  .search-box {
+    width: 190px;
+  }
+
+
+  .search-box:focus-within {
+    width: 210px;
+  }
+
+
+  .nav-actions {
+    margin-left: 12px;
+
+    gap: 6px;
+  }
+
+
+  .action {
+    width: 37px;
+    height: 37px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: auto;
+
+    position: sticky;
+  }
+
+
+  .navbar-container {
+
+    padding: 14px 18px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    grid-template-areas:
+
+      "logo actions"
+
+      "links links"
+
+      "search search";
+
+    gap: 17px 12px;
+  }
+
+
+  /* Logo */
+
+  .logo {
+    grid-area: logo;
+
+    width: 105px;
+  }
+
+
+  .logo-store {
+    font-size: 24px;
+  }
+
+
+  /* Actions */
+
+  .nav-actions {
+    grid-area: actions;
+
+    margin-left: 0;
+
+    gap: 7px;
+  }
+
+
+  .action {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .account {
+    display: none;
+  }
+
+
+  /* Navigation */
+
+  .nav-links {
+    grid-area: links;
+
+    width: 100%;
+
+    margin-left: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+  }
+
+
+  .nav-links > a,
+  .category-btn {
+    height: 35px;
+
+    font-size: 13px;
+  }
+
+
+  .nav-links > a::after,
+  .category-btn::after {
+    bottom: 0;
+  }
+
+
+  /* Search */
+
+  .search-box,
+  .search-box:focus-within {
+
+    grid-area: search;
+
+    width: 100%;
+
+    height: 44px;
+  }
+
+
+  /* Dropdown */
+
+  .dropdown {
+    left: 50%;
+
+    transform: translate(-50%, -8px);
+  }
+
+
+  .categories:hover .dropdown {
+    transform: translate(-50%, 0);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .navbar-container {
+    padding: 13px 14px;
+
+    gap: 15px 10px;
+  }
+
+
+  .logo {
+    width: 95px;
+  }
+
+
+  .logo-store {
+    font-size: 21px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .logo-mhz {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .logo-line {
+    width: 11px;
+  }
+
+
+  .nav-links {
+    gap: 16px;
+  }
+
+
+  .nav-links > a,
+  .category-btn {
+    font-size: 12px;
+  }
+
+
+  .category-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+
+  .category-arrow {
+    width: 12px;
+    height: 12px;
+  }
+
+
+  .action {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .action svg {
+    width: 18px;
+    height: 18px;
+  }
+
+}
+
+
+
+.account-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #fff;
+  text-decoration: none;
+
+  background: none;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.account-btn svg {
+  width: 21px;
+  height: 21px;
+}
+
+.account-btn:hover {
+  color: #c59b5c;
+}

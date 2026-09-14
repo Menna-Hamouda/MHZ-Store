@@ -1,0 +1,37 @@
+<div class="pagination">
+
+  <button
+    type="button"
+    [disabled]="currentPage === 1"
+    (click)="previous()"
+  >
+    ← Previous
+  </button>
+
+
+  <div class="page-numbers">
+
+    @for (page of pages; track page) {
+
+      <button
+        type="button"
+        [class.active]="page === currentPage"
+        (click)="goToPage(page)"
+      >
+        {{ page }}
+      </button>
+
+    }
+
+  </div>
+
+
+  <button
+    type="button"
+    [disabled]="currentPage === totalPages"
+    (click)="next()"
+  >
+    Next →
+  </button>
+
+</div>

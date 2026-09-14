@@ -1,0 +1,206 @@
+.products-page {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 40px 32px 80px;
+}
+
+
+/* =========================
+   Breadcrumb
+========================= */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 32px;
+
+  font-size: 14px;
+
+  color: #777;
+}
+
+.breadcrumb span:last-child {
+  color: #111;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.products-header {
+  margin-bottom: 32px;
+}
+
+.products-header h1 {
+  margin: 0 0 8px;
+
+  font-size: 42px;
+
+  font-weight: 600;
+}
+
+.products-header p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   Search
+========================= */
+
+.search-section {
+  max-width: 700px;
+
+  margin-bottom: 40px;
+}
+
+
+/* =========================
+   Layout
+========================= */
+
+.products-layout {
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  gap: 48px;
+}
+
+
+/* =========================
+   Sidebar
+========================= */
+
+.filters-sidebar {
+  padding-right: 24px;
+
+  border-right: 1px solid #eee;
+}
+
+.filters-title {
+  margin-bottom: 24px;
+}
+
+.filters-title h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   Content
+========================= */
+
+.products-content {
+  min-width: 0;
+}
+
+
+/* =========================
+   Toolbar
+========================= */
+
+.products-toolbar {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.products-count {
+  font-size: 14px;
+
+  color: #666;
+}
+
+
+/* =========================
+   Empty State
+========================= */
+
+.no-products {
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.no-products h2 {
+  margin-bottom: 8px;
+}
+
+.no-products p {
+  color: #777;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+
+  .products-layout {
+    grid-template-columns: 180px 1fr;
+
+    gap: 24px;
+  }
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+
+  .products-page {
+    padding: 24px 16px 60px;
+  }
+
+
+  .products-header h1 {
+    font-size: 32px;
+  }
+
+
+  .products-layout {
+    display: block;
+  }
+
+
+  .filters-sidebar {
+    display: none;
+  }
+
+
+  .products-toolbar {
+    margin-bottom: 20px;
+  }
+
+}

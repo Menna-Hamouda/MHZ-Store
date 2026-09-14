@@ -1,0 +1,46 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-section h3 {
+  margin: 0 0 4px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.filter-section label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  color: #555;
+
+  cursor: pointer;
+}
+
+.filter-section input[type="radio"] {
+  cursor: pointer;
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 13px;
+  color: #666;
+}
+
+.price-range {
+  width: 100%;
+  cursor: pointer;
+}

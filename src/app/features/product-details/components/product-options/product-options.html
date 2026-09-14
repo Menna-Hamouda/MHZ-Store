@@ -1,0 +1,171 @@
+<div class="product-options">
+
+  <!-- Size -->
+  <div class="option-group">
+
+    <div class="option-header">
+
+      <span>
+        Size
+      </span>
+
+      <button type="button">
+        Size Guide
+      </button>
+
+    </div>
+
+
+    <div class="option-values">
+
+      <button
+        type="button"
+        class="option-btn">
+        S
+      </button>
+
+      <button
+        type="button"
+        class="option-btn active">
+        M
+      </button>
+
+      <button
+        type="button"
+        class="option-btn">
+        L
+      </button>
+
+      <button
+        type="button"
+        class="option-btn">
+        XL
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Color -->
+  <div class="option-group">
+
+    <div class="option-header">
+
+      <span>
+        Color
+      </span>
+
+    </div>
+
+
+    <div class="colors">
+
+      <button
+        type="button"
+        class="color-btn black">
+      </button>
+
+      <button
+        type="button"
+        class="color-btn beige">
+      </button>
+
+      <button
+        type="button"
+        class="color-btn brown">
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Quantity -->
+  <div class="quantity-wrapper">
+
+    <span>
+      Quantity
+    </span>
+
+
+    <div class="quantity">
+
+      <button type="button"
+      (click)="decreaseQuantity()">
+        −
+      </button>
+
+      <span>
+         {{ quantity }}
+      </span>
+
+      <button type="button"
+      (click)="increaseQuantity()">
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Buttons -->
+  <div class="actions">
+
+    <button
+      class="add-cart"
+      type="button"
+       (click)="onAddToCart()">
+
+      Add to Cart
+
+    </button>
+
+
+    <button
+      class="buy-now"
+      type="button">
+
+      Buy Now
+
+    </button>
+
+  </div>
+
+
+  <!-- Benefits -->
+  <div class="benefits">
+
+    <div class="benefit">
+      <span>🚚</span>
+
+      <div>
+        <strong>Free Delivery</strong>
+        <small>On orders over $50</small>
+      </div>
+    </div>
+
+
+    <div class="benefit">
+      <span>↩</span>
+
+      <div>
+        <strong>30-Day Returns</strong>
+        <small>No questions asked</small>
+      </div>
+    </div>
+
+
+    <div class="benefit">
+      <span>✓</span>
+
+      <div>
+        <strong>Secure Payment</strong>
+        <small>100% secure checkout</small>
+      </div>
+    </div>
+
+  </div>
+
+</div>

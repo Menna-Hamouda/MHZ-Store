@@ -1,0 +1,61 @@
+<section class="favorites-section">
+
+  <div class="section-header">
+
+    <span class="section-label">
+      YOUR PICKS
+    </span>
+
+    <h1>
+      My Favorites
+    </h1>
+
+    <p>
+      Products you've saved for later.
+    </p>
+
+  </div>
+
+
+  @if (favorites().length > 0) {
+
+    <div class="favorites-grid">
+
+      @for (product of favorites(); track product.id) {
+
+        <div class="favorite-item">
+
+          <app-product-card
+            [product]="product"
+            [isFavorite]="true"
+            (favoriteClicked)="removeFavorite($event)"
+            (cartClicked)="onAddToCart($event)"
+          ></app-product-card>
+
+        </div>
+
+      }
+
+    </div>
+
+  } @else {
+
+    <div class="empty-favorites">
+
+      <h2>
+        No favorites yet
+      </h2>
+
+      <p>
+        Start adding products you love.
+      </p>
+
+      <a routerLink="/shop">
+        Explore Products
+      </a>
+
+    </div>
+
+  }
+
+</section>

@@ -1,0 +1,71 @@
+<div class="product-info">
+
+  <!-- Brand -->
+  <span class="brand">
+    {{ product().brand }}
+  </span>
+
+
+  <!-- Title -->
+  <h1>
+    {{ product().title }}
+  </h1>
+
+
+  <!-- Rating -->
+  <div class="rating">
+
+    <div class="stars">
+      ★★★★★
+    </div>
+
+    <span>
+      {{ product().rating }}
+    </span>
+
+  </div>
+
+
+  <!-- Price -->
+  <div class="price">
+    ${{ product().price }}
+  </div>
+
+
+  <!-- Description -->
+  <p class="description">
+    {{ product().description }}
+  </p>
+
+
+  <!-- Product Details -->
+  <div class="product-meta">
+
+    <div class="meta-item">
+
+      <span>
+        Category
+      </span>
+
+      <strong>
+        {{ product().category }}
+      </strong>
+
+    </div>
+
+
+    <div class="meta-item">
+
+      <span>
+        Brand
+      </span>
+
+      <strong>
+        {{ product().brand }}
+      </strong>
+
+    </div>
+
+  </div>
+
+</div>

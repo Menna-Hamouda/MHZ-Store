@@ -1,0 +1,14 @@
+<div class="product-grid">
+
+  @for (product of products; track product.id) {
+
+    <app-product-card
+      [product]="product"
+      [isFavorite]="isFavorite(product.id)"
+      (favoriteClicked)="onFavorite($event)"
+      (cartClicked)="onAddToCart($event)">
+    </app-product-card>
+
+  }
+
+</div>

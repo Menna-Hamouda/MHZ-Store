@@ -1,0 +1,161 @@
+<div class="review-card">
+
+  <div class="review-section">
+
+    <div class="section-header">
+
+      <h2>Order Items</h2>
+
+    </div>
+
+
+    <div class="review-items">
+
+      @for (
+        item of items();
+        track item.product.id
+      ) {
+
+        <div class="review-item">
+
+          <img
+            [src]="item.product.thumbnail"
+            [alt]="item.product.title"
+          />
+
+          <div class="review-item-info">
+
+            <h3>
+              {{ item.product.title }}
+            </h3>
+
+            <p>
+              Quantity: {{ item.quantity }}
+            </p>
+
+            <strong>
+              ${{
+                (
+                  item.product.price *
+                  item.quantity
+                ).toFixed(2)
+              }}
+            </strong>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+
+  <div class="review-section">
+
+    <div class="section-header">
+
+      <h2>Shipping Address</h2>
+
+      <button
+        type="button"
+        (click)="onBack()"
+      >
+        Edit
+      </button>
+
+    </div>
+
+
+    <div class="shipping-details">
+
+      <p>
+        {{ shipping().firstName }}
+        {{ shipping().lastName }}
+      </p>
+
+      <p>
+        {{ shipping().address }}
+      </p>
+
+      <p>
+        {{ shipping().city }},
+        {{ shipping().governorate }}
+      </p>
+
+      <p>
+        {{ shipping().postalCode }}
+      </p>
+
+      <p>
+        {{ shipping().phone }}
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="review-total">
+
+    <div>
+      <span>Subtotal</span>
+
+      <strong>
+        ${{ subtotal().toFixed(2) }}
+      </strong>
+    </div>
+
+
+    <div>
+      <span>Shipping</span>
+
+      <strong>
+
+        @if (shippingCost() === 0) {
+          Free
+        } @else {
+          ${{ shippingCost().toFixed(2) }}
+        }
+
+      </strong>
+
+    </div>
+
+
+    <div class="grand-total">
+
+      <span>Total</span>
+
+      <strong>
+        ${{ total().toFixed(2) }}
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <div class="review-actions">
+
+    <button
+      type="button"
+      class="secondary-btn"
+      (click)="onBack()"
+    >
+      Back
+    </button>
+
+    <button
+      type="button"
+      class="primary-btn"
+      (click)="onPlaceOrder()"
+    >
+      Place Order
+    </button>
+
+  </div>
+
+</div>
