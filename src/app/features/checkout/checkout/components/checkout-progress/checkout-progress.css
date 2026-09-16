@@ -1,25 +1,40 @@
+/* =========================================
+   CHECKOUT PROGRESS
+========================================= */
+
 .checkout-progress {
+  width: 100%;
+  max-width: 750px;
+
+  margin: 0 auto 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-
-  max-width: 700px;
-  margin: 0 auto 45px;
 }
 
-.step {
+
+/* =========================================
+   STEP
+========================================= */
+
+.progress-step {
   display: flex;
   align-items: center;
   gap: 10px;
 
   color: #aaa;
+
   font-size: 14px;
   font-weight: 600;
 
   white-space: nowrap;
 }
 
-.step-number {
+
+/* Number */
+
+.progress-step span {
   width: 36px;
   height: 36px;
 
@@ -38,40 +53,44 @@
   transition: 0.25s ease;
 }
 
-.step.active {
-  color: #1d1d1d;
-}
 
-.step.active .step-number {
-  background: #b8893c;
-  color: #fff;
-}
+/* Text */
 
-.step.completed {
-  color: #1d1d1d;
-}
-
-.step.completed .step-number {
-  background: #1d1d1d;
-  color: #fff;
-}
-
-.step-line {
-  width: 80px;
-  height: 1px;
-
-  margin: 0 15px;
-
-  background: #ddd8cf;
-}
-
-.step-line.active {
-  background: #b8893c;
+.progress-step strong {
+  font-weight: 600;
 }
 
 
 /* =========================================
-   MOBILE
+   ACTIVE STEP
+========================================= */
+
+.progress-step.active {
+  color: #1d1d1d;
+}
+
+.progress-step.active span {
+  background: #b8893c;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+.progress-line {
+  width: 90px;
+  height: 1px;
+
+  margin: 0 16px;
+
+  background: #ddd8cf;
+}
+
+
+/* =========================================
+   RESPONSIVE
 ========================================= */
 
 @media (max-width: 600px) {
@@ -80,20 +99,19 @@
     margin-bottom: 30px;
   }
 
-  .step {
+  .progress-step {
     gap: 6px;
     font-size: 11px;
   }
 
-  .step-number {
+  .progress-step span {
     width: 30px;
     height: 30px;
     font-size: 12px;
   }
 
-  .step-line {
-    width: 30px;
-    margin: 0 7px;
+  .progress-line {
+    width: 25px;
+    margin: 0 6px;
   }
-
 }
